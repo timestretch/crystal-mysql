@@ -59,6 +59,15 @@ DB.open "mysql://root@localhost/test" do |db|
 end
 ```
 
+## Unix Domain Socket
+
+If you specify a socket path, it will override the hostname in the URI.
+
+```crystal
+DB.open "mysql://root@localhost/test?socket=/tmp/mysql.sock" do |db|
+end
+```
+
 When running this example, if you get the following exception:
 
 > Unhandled exception: Client does not support authentication protocol requested by server; consider upgrading MySQL client (Exception)
